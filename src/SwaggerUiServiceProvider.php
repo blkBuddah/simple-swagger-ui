@@ -2,17 +2,17 @@
 
 namespace Ornikar\SwaggerUi;
 
-use Illuminate\Foundation\Http\Kernel;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Ornikar\SwaggerUi\Http\Middleware\DumbMiddleware;
 use Ornikar\SwaggerUi\Http\Controllers\SwaggerUIController;
+use Ornikar\SwaggerUi\Http\Middleware\DumbMiddleware;
 
 class SwaggerUiServiceProvider extends ServiceProvider
 {
-    public function boot(Kernel $kernel) : void
+    public function boot(Router $router) : void
     {
-        $kernel->getRouteMiddleware()['ornikar_web'] = DumbMiddleware::class;
+        $router->aliasMiddleware('ornikar_web', DumbMiddleware::class);
 
         $json = base_path() . DIRECTORY_SEPARATOR . config('l5-swagger.defaults.paths.docs')
             . DIRECTORY_SEPARATOR . config('l5-swagger.documentations.default.paths.docs_json');
