@@ -1,0 +1,63 @@
+{
+    "name": "ornikar/simple-swagger-ui",
+    "description": "Add Swagger UI to a Laravel/Symfony application.",
+    "keywords": [
+        "laravel",
+        "symfony",
+        "swagger",
+        "swagger-ui",
+        "openapi"
+    ],
+    "homepage": "https://github.com/blkBuddah/simple-swagger-ui.git",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "mixed",
+            "email": "jacques.houegbonou@ornikar.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.1",
+        "ext-json": "*",
+        "laravel/framework": "^8.0|^9.0"
+    },
+    "suggest": {
+        "ext-yaml": "*"
+    },
+    "require-dev": {
+        "adamwojs/php-cs-fixer-phpdoc-force-fqcn": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "orchestra/testbench": "^6.0|^7.0",
+        "phpunit/phpunit": "^9.1",
+        "squizlabs/php_codesniffer": "^3.6",
+        "darkaonline/l5-swagger": "~8.0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ornikar\\SwaggerUi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ornikar\\SwaggerUi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "lint": "vendor/bin/php-cs-fixer fix && vendor/bin/phpcs --colors --report-full",
+        "lint-dry": "vendor/bin/php-cs-fixer fix --dry-run --diff-format=udiff && vendor/bin/phpcs --colors --report-full"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ornikar\\SwaggerUi\\SwaggerUiServiceProvider"
+            ]
+        }
+    }
+}
