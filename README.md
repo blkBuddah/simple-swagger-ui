@@ -2,13 +2,30 @@
 
 This package makes it easy to make your project's Swagger (OpenAPI v3 JSON) file accessible in a Swagger UI right in your Laravel application.
 
-The Swagger UI will automatically use your current project environment. It will set your api's base url to the active base url. Possible oauth2 configuration, such as urls and client-id/client-secret, can also be injected in Swagger UI via the configuration file.
-
 ## Installation
+You can install the package via composer:
+
+Add the repository to your `composer.json`:
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/ornikar/simple-swagger-ui.git"
+    }
+]
+```
+then 
+```bash
+composer require ornikar/simple-swagger-ui
+```
 
 ## Usage
+The Swagger UI is exposed at `/swagger-ui`.
+
+Example: https://firstname-lastname-services-proxy.onroad.dev/firstname-lastname-booking-service/swagger-ui
 
 ## Testing
+TODO
 
 ## Linting
 
@@ -26,12 +43,13 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email jacques.houegbonou@ornikar instead of using the issue tracker.
+If you discover any security related issues, please email [me](mailto:jacques.houegbonou@ornikar) instead of using the issue tracker.
 
 ## Credits
 
 - [Günther Debrauwer](https://github.com/gdebrauwer)
-- [All Contributors](../../contributors)
+- [Camille Baronnet](https://github.com/camillebaronnet)
+- All Contributors
 
 ## License
 
